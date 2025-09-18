@@ -1,0 +1,1 @@
+export interface Card { id: number; seed: number; flipped: boolean }

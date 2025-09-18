@@ -1,0 +1,27 @@
+<div id="impagginamento">
+    <div id="contenitoreCard">
+        @for(card of cards; track card.id){
+        <div class="card" (click)="flipCard(card.id)">
+            <div class="card-inner" [class.flipped]="card.flipped">
+                <div class="card-front">
+                    <p>Front Side</p>
+                </div>
+                <div class="card-back">
+                    <img src="https://picsum.photos/seed/{{card.seed}}/200" alt="">
+                </div>
+            </div>
+        </div>
+        }
+        @empty {
+        <p>No cards available.</p>
+        }
+    </div>
+
+    <div id="punteggio">
+        <h1>Memory</h1>
+        <div>
+        <p>Giocatore1 : {{punteggioGiocatore1}}</p><br>
+        <p>Giocatore2 : {{punteggioGiocatore2}}</p>
+        </div>
+    </div>
+</div>

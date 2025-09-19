@@ -4,7 +4,7 @@
         <div class="card" (click)="flipCard(card.id)">
             <div class="card-inner" [class.flipped]="card.flipped">
                 <div class="card-front">
-                    <p>Front Side</p>
+                    <p>Memory</p>
                 </div>
                 <div class="card-back">
                     <img src="https://picsum.photos/seed/{{card.seed}}/200" alt="">
@@ -13,15 +13,17 @@
         </div>
         }
         @empty {
-        <p>No cards available.</p>
+        <p>Nessuna carta trovata</p>
         }
     </div>
 
     <div id="punteggio">
-        <h1>Memory</h1>
-        <div>
-        <p>Giocatore1 : {{punteggioGiocatore1}}</p><br>
-        <p>Giocatore2 : {{punteggioGiocatore2}}</p>
-        </div>
+        <h1 style="font-size: 60px;">Memory</h1>
+        <div class="giocatore" [ngClass]="{
+      'giocatore1': turnoGiocatore1
+    }"><fa-icon [icon]="faUser"></fa-icon><span>Giocatore1: {{punteggioGiocatore1}}</span> </div>
+        <div class="giocatore" [ngClass]="{
+      'giocatore2': !turnoGiocatore1
+    }"><fa-icon [icon]="faUser"></fa-icon><span>Giocatore2: {{punteggioGiocatore2}}</span></div>
     </div>
 </div>
